@@ -1,0 +1,18 @@
+schema {
+    query: Query # Schemas must have at least a query root type
+    subscription : Subscription
+}
+
+type Query {
+    dummyQueryValue : String
+}
+
+type Subscription {
+    marketPrices(marketIds:[String]!) : MarketPrice!
+}
+
+type MarketPrice {
+    id : String
+    name : String
+    price : Float
+}
